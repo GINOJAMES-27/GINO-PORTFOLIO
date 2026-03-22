@@ -1,0 +1,93 @@
+/* App.css - Global Component Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0a0a0f;
+  color: #e0e0e0;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Navbar Responsive Styles */
+@media (max-width: 768px) {
+  nav {
+    padding: 0 4% !important;
+  }
+
+  nav > div:nth-child(2) {
+    display: none !important;
+  }
+
+  nav button:last-child {
+    display: block !important;
+  }
+}
+
+/* Global Button Styles */
+button {
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+/* Links */
+a {
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #00f5c4;
+}
+
+/* Section Spacing */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Smooth Transitions */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hero Section Mobile */
+@media (max-width: 768px) {
+  [style*="minHeight: 100vh"] {
+    padding: 80px 5% 40px !important;
+  }
+}
+
+/* Projects Grid Mobile */
+@media (max-width: 640px) {
+  [style*="gridTemplateColumns: \"repeat(auto-fit"]:not(style) {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Social Links Mobile */
+@media (max-width: 640px) {
+  [style*="display: flex"][style*="flexWrap: wrap"][style*="gap: 16px"] {
+    gap: 8px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* Experience Timeline Mobile */
+@media (max-width: 768px) {
+  [style*="paddingLeft: 32px"] {
+    padding-left: 16px !important;
+  }
+}
+
+
