@@ -19,7 +19,7 @@ const FLOATING_ICONS = [
 ]
 
 const STATS = [
-  { value: '8.36', label: 'CGPA' },
+  { value: '8.35', label: 'CGPA' },
   { value: '3+',   label: 'Projects' },
   { value: '2',    label: 'Internships' },
   { value: '2x',   label: 'Award Winner' },
@@ -102,7 +102,7 @@ export default function Hero() {
       {/* ── Floating tech icons ── */}
       {FLOATING_ICONS.map(({ Icon, color, top, left, size, delay, duration }, i) => (
         <div key={i} style={{
-          position: 'absolute', top, left, opacity: 0.15,
+          position: 'absolute', top, left, opacity: 'var(--hero-icon-opacity)',
           animation: `float ${duration} ease-in-out infinite ${delay}`,
           pointerEvents: 'none',
         }}>
@@ -152,12 +152,12 @@ export default function Hero() {
           }}>
             <span style={{
               width: 8, height: 8, borderRadius: '50%',
-              background: '#00f5c4', display: 'inline-block',
+              background: 'var(--accent-cyan)', display: 'inline-block',
               animation: 'blink 1.5s ease-in-out infinite',
               boxShadow: '0 0 6px #00f5c4',
             }} />
             <span style={{
-              fontSize: 12, color: '#00f5c4',
+              fontSize: 12, color: 'var(--accent-cyan)',
               fontFamily: "'JetBrains Mono', monospace",
               fontWeight: 600, letterSpacing: 1,
             }}>AVAILABLE FOR OPPORTUNITIES</span>
@@ -168,7 +168,7 @@ export default function Hero() {
             fontFamily: "'JetBrains Mono', monospace",
             fontWeight: 700,
             fontSize: 'clamp(36px, 6vw, 72px)',
-            color: '#fff', lineHeight: 1.05,
+            color: 'var(--text-primary)', lineHeight: 1.05,
             marginBottom: 8, letterSpacing: -2,
             opacity: mounted ? 1 : 0,
             transform: mounted ? 'translateY(0)' : 'translateY(20px)',
@@ -192,40 +192,30 @@ export default function Hero() {
             <span style={{
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: 'clamp(14px, 2.5vw, 22px)',
-              color: '#7c6fff', fontWeight: 700,
+              color: 'var(--accent-purple)', fontWeight: 700,
             }}>&lt; {displayed}</span>
             <span style={{
               fontFamily: "'JetBrains Mono', monospace",
-              fontSize: 26, color: '#00f5c4',
+              fontSize: 26, color: 'var(--accent-cyan)',
               animation: 'blink 0.8s step-end infinite',
             }}>|</span>
           <span style={{
             fontFamily: "'JetBrains Mono', monospace",
             fontSize: 'clamp(16px, 3vw, 24px)',
-            color: '#7c6fff', fontWeight: 700,
+            color: 'var(--accent-purple)', fontWeight: 700,
           }}>/ &gt;</span>
           </div>
 
           {/* Bio */}
           <p style={{
             fontSize: 'clamp(13px, 1.8vw, 16px)',
-            color: '#888', lineHeight: 1.9,
+            color: 'var(--text-secondary)', lineHeight: 1.9,
             maxWidth: 480, marginBottom: 32,
             opacity: mounted ? 1 : 0,
             transform: mounted ? 'translateY(0)' : 'translateY(10px)',
             transition: 'opacity 0.7s ease 0.4s, transform 0.7s ease 0.4s',
           }}>
-            B.Tech IT student at{' '}
-            <span style={{ color: '#ccc', fontWeight: 500 }}>
-              Amal Jyothi College of Engineering
-            </span>{' '}
-            (CGPA:{' '}
-            <span style={{ color: '#00f5c4', fontFamily: "'JetBrains Mono', monospace", fontWeight: 700 }}>
-              8.36
-            </span>
-            ) — building AI‑driven SaaS at{' '}
-            <span style={{ color: '#ccc', fontWeight: 500 }}>Hudson Software Solutions</span>.
-            Passionate about scalable systems, path planning algorithms, and shipping products that matter.
+            I’m a <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>Full-Stack Software Developer</span> with a strong focus on backend architecture and scalable solutions. I enjoy designing APIs, working with databases, and integrating systems. Currently, I'm contributing to enterprise SaaS products at <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>Hudson Software Solutions</span>.
           </p>
 
           {/* CTA buttons */}
@@ -239,7 +229,7 @@ export default function Hero() {
             <button
               onClick={() => scrollTo('projects')}
               style={{
-                background: '#00f5c4', color: '#0a0a0f',
+                background: 'var(--accent-cyan)', color: 'var(--bg-primary)',
                 border: 'none', borderRadius: 10,
                 padding: '13px 28px', fontWeight: 700,
                 fontSize: 14, cursor: 'pointer',
@@ -262,7 +252,7 @@ export default function Hero() {
               href="/resume.pdf"
               download
               style={{
-                background: 'transparent', color: '#fff',
+                background: 'transparent', color: 'var(--text-primary)',
                 border: '1.5px solid #ffffff22', borderRadius: 10,
                 padding: '13px 28px', fontWeight: 600, fontSize: 14,
                 textDecoration: 'none', display: 'inline-block',
@@ -287,8 +277,8 @@ export default function Hero() {
           {/* Stats row */}
           <div style={{
             display: 'flex', gap: 0,
-            background: '#0d0d18',
-            border: '1px solid #1a1a2e',
+            background: 'var(--bg-secondary)',
+            border: '1px solid var(--border-color)',
             borderRadius: 14, overflow: 'hidden',
             marginBottom: 32, flexWrap: 'wrap',
             width: '100%', maxWidth: 460,
@@ -299,7 +289,7 @@ export default function Hero() {
             {STATS.map((s, i) => (
               <div key={i} style={{
                 flex: '1 1 25%', padding: '16px 12px', textAlign: 'center',
-                borderRight: i < STATS.length - 1 ? '1px solid #1a1a2e' : 'none',
+                borderRight: i < STATS.length - 1 ? '1px solid var(--border-color)' : 'none',
                 transition: 'background 0.2s',
               }}
                 onMouseEnter={e => e.currentTarget.style.background = '#ffffff05'}
@@ -308,10 +298,10 @@ export default function Hero() {
                 <div style={{
                   fontFamily: "'JetBrains Mono', monospace",
                   fontSize: 'clamp(16px, 2.5vw, 22px)',
-                  fontWeight: 700, color: '#00f5c4', marginBottom: 3,
+                  fontWeight: 700, color: 'var(--accent-cyan)', marginBottom: 3,
                 }}>{s.value}</div>
                 <div style={{
-                  fontSize: 10, color: '#555',
+                  fontSize: 10, color: 'var(--text-muted)',
                   fontFamily: "'DM Sans', sans-serif",
                   textTransform: 'uppercase', letterSpacing: 1,
                 }}>{s.label}</div>
@@ -327,7 +317,7 @@ export default function Hero() {
             transition: 'opacity 0.7s ease 0.7s',
           }}>
             {[
-              { Icon: SiGithub,     label: 'GitHub',   href: 'https://github.com/GINOJAMES-27',    color: '#fff'    },
+              { Icon: SiGithub,     label: 'GitHub',   href: 'https://github.com/GINOJAMES-27',    color: 'var(--text-primary)'    },
               { Icon: FaLinkedinIn, label: 'LinkedIn',  href: 'https://linkedin.com/in/gino-james', color: '#0a66c2' },
             ].map(({ Icon, label, href, color }) => (
               <a
@@ -337,24 +327,24 @@ export default function Hero() {
                 rel="noreferrer"
                 style={{
                   display: 'flex', alignItems: 'center', gap: 8,
-                  background: '#0d0d18', border: '1px solid #1a1a2e',
+                  background: 'var(--bg-secondary)', border: '1px solid var(--border-color)',
                   borderRadius: 10, padding: '9px 16px',
-                  textDecoration: 'none', color: '#888',
+                  textDecoration: 'none', color: 'var(--text-secondary)',
                   fontSize: 13, fontWeight: 500,
                   fontFamily: "'DM Sans', sans-serif",
                   transition: 'all 0.2s',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.border = `1px solid ${color}55`
-                  e.currentTarget.style.color = '#fff'
+                  e.currentTarget.style.border = `1px solid color-mix(in srgb, ${color} 33%, transparent)`
+                  e.currentTarget.style.color = 'var(--text-primary)'
                   e.currentTarget.style.transform = 'translateY(-2px)'
-                  e.currentTarget.style.background = color + '12'
+                  e.currentTarget.style.background = `color-mix(in srgb, ${color} 7%, transparent)`
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.border = '1px solid #1a1a2e'
-                  e.currentTarget.style.color = '#888'
+                  e.currentTarget.style.border = '1px solid var(--border-color)'
+                  e.currentTarget.style.color = 'var(--text-secondary)'
                   e.currentTarget.style.transform = 'translateY(0)'
-                  e.currentTarget.style.background = '#0d0d18'
+                  e.currentTarget.style.background = 'var(--bg-secondary)'
                 }}
               >
                 <Icon size={15} color={color} />
@@ -362,13 +352,13 @@ export default function Hero() {
               </a>
             ))}
 
-            <div style={{ width: 1, height: 18, background: '#1a1a2e' }} />
+            <div style={{ width: 1, height: 18, background: 'var(--border-color)' }} />
 
             <a
               href="mailto:ginojames27@gmail.com"
-              style={{ fontSize: 12, color: '#555', textDecoration: 'none', fontFamily: "'JetBrains Mono', monospace" }}
-              onMouseEnter={e => e.currentTarget.style.color = '#00f5c4'}
-              onMouseLeave={e => e.currentTarget.style.color = '#555'}
+              style={{ fontSize: 12, color: 'var(--text-muted)', textDecoration: 'none', fontFamily: "'JetBrains Mono', monospace" }}
+              onMouseEnter={e => e.currentTarget.style.color = 'var(--accent-cyan)'}
+              onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}
             >
               ginojames27@gmail.com
             </a>
@@ -405,7 +395,7 @@ export default function Hero() {
               <div style={{
                 width: '100%', height: '100%',
                 borderRadius: '50%',
-                background: '#0a0a0f',
+                background: 'var(--bg-primary)',
               }} />
             </div>
 
@@ -428,7 +418,7 @@ export default function Hero() {
                 borderRadius: '50%',
                 objectFit: 'cover',
                 objectPosition: 'center top',
-                border: '3px solid #0a0a0f',
+                border: '3px solid var(--bg-primary)',
                 zIndex: 1,
               }}
               onError={(e) => {
@@ -443,19 +433,19 @@ export default function Hero() {
               position: 'absolute',
               width: 252, height: 252,
               borderRadius: '50%',
-              background: '#0d0d18',
+              background: 'var(--bg-secondary)',
               display: 'none',
               alignItems: 'center',
               justifyContent: 'center',
               fontFamily: "'JetBrains Mono', monospace",
               fontWeight: 700, fontSize: 52,
-              color: '#00f5c4', zIndex: 1,
+              color: 'var(--accent-cyan)', zIndex: 1,
             }}>GJ</div>
 
             {/* Floating badge — NASA */}
             <div style={{
               position: 'absolute', top: 12, right: -16,
-              background: '#1a1a2e', border: '1px solid #00f5c4', color: '#00f5c4',
+              background: 'var(--border-color)', border: '1px solid #00f5c4', color: 'var(--accent-cyan)',
               borderRadius: 20, padding: '6px 12px',
               fontSize: 11, fontWeight: 600,
               animation: 'float 3s ease-in-out infinite',
@@ -467,7 +457,7 @@ export default function Hero() {
             {/* Floating badge — I2U */}
             <div style={{
               position: 'absolute', bottom: 12, left: -24,
-              background: '#1a1a2e', border: '1px solid #7c6fff', color: '#7c6fff',
+              background: 'var(--border-color)', border: '1px solid #7c6fff', color: 'var(--accent-purple)',
               borderRadius: 20, padding: '6px 12px',
               fontSize: 11, fontWeight: 600,
               animation: 'float 3.5s ease-in-out infinite 0.5s',
@@ -479,18 +469,18 @@ export default function Hero() {
 
           {/* Name card below photo */}
           <div style={{
-            background: '#0d0d18',
-            border: '1px solid #1a1a2e',
+            background: 'var(--bg-secondary)',
+            border: '1px solid var(--border-color)',
             borderRadius: 14, padding: '14px 24px',
             textAlign: 'center',
           }}>
             <p style={{
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: 15, fontWeight: 700,
-              color: '#fff', margin: '0 0 4px',
+              color: 'var(--text-primary)', margin: '0 0 4px',
             }}>Gino James</p>
             <p style={{
-              fontSize: 12, color: '#555',
+              fontSize: 12, color: 'var(--text-muted)',
               fontFamily: "'DM Sans', sans-serif",
               margin: 0,
             }}>B.Tech IT · AJCE · Kerala, India</p>
@@ -512,7 +502,7 @@ export default function Hero() {
         }}
       >
         <span style={{
-          fontSize: 10, color: '#555', letterSpacing: 2,
+          fontSize: 10, color: 'var(--text-muted)', letterSpacing: 2,
           fontFamily: "'JetBrains Mono', monospace",
           textTransform: 'uppercase',
         }}>scroll</span>

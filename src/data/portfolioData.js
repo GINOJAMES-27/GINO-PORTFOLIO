@@ -4,7 +4,7 @@ export const EXPERIENCES = [
     company: 'Hudson Software Solutions Pvt. Ltd.',
     location: 'Koovappally, Kerala',
     period: 'Jan 2026 – Present',
-    color: '#00f5c4',
+    color: 'var(--accent-cyan)',
     points: [
       'Contributing to AI-driven SaaS and ERP solutions tailored for enterprise needs.',
       'Building cloud-native platforms, automation tools, and scalable enterprise systems using Python, AI frameworks, and cloud technologies.',
@@ -15,7 +15,7 @@ export const EXPERIENCES = [
     company: 'Leopard Tech Labs',
     location: 'Koovappally, Kerala',
     period: 'June 2025',
-    color: '#7c6fff',
+    color: 'var(--accent-purple)',
     points: [
       'Built and tested Node.js applications including a hotel booking system with secure user authentication.',
       'Developed a self-driven project, Task Manager, featuring user/admin roles.',
@@ -26,7 +26,7 @@ export const EXPERIENCES = [
     company: 'Leopard Tech Labs',
     location: 'Koovappally, Kerala',
     period: 'June 2024 – July 2024',
-    color: '#ff6b9d',
+    color: 'var(--accent-pink)',
     points: [
       'Built and tested Flutter mobile applications with enhanced performance optimization.',
       'Ensured cross-platform compatibility across Android and iOS devices.',
@@ -41,7 +41,7 @@ export const PROJECTS = [
     tags: ['Python', 'OpenCV', 'PyTorch'],
     icon: 'SiPython',
     iconColor: '#3776ab',
-    color: '#00f5c4',
+    color: 'var(--accent-cyan)',
     github: 'https://github.com/GINOJAMES-27/RRT-Optimization-Final-Year-Project',
   },
   {
@@ -50,7 +50,7 @@ export const PROJECTS = [
     tags: ['Django', 'PostgreSQL', 'HTML', 'CSS'],
     icon: 'SiDjango',
     iconColor: '#092e20',
-    color: '#7c6fff',
+    color: 'var(--accent-purple)',
     github: 'https://github.com/GINOJAMES-27',
   },
   {
@@ -59,7 +59,7 @@ export const PROJECTS = [
     tags: ['Java', 'MySQL', 'Java Swing'],
     icon: 'SiOpenjdk',
     iconColor: '#f89820',
-    color: '#ff6b9d',
+    color: 'var(--accent-pink)',
     github: 'https://github.com/GINOJAMES-27/Employee-Management-System',
   },
 ]
@@ -93,10 +93,10 @@ export const SKILLS = {
 }
 
 export const SKILL_COLORS = {
-  Languages:    '#00f5c4',
-  Frontend:     '#7c6fff',
-  'Backend & DB': '#ff6b9d',
-  'Tools & AI': '#f5a623',
+  Languages:    'var(--accent-cyan)',
+  Frontend:     'var(--accent-purple)',
+  'Backend & DB': 'var(--accent-pink)',
+  'Tools & AI': 'var(--text-primary)',
 }
 
 export const NAV_LINKS = ['About', 'Experience', 'Projects', 'Skills', 'Achievements', 'Contact']

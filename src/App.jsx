@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Experience from './components/Experience'
@@ -7,23 +8,33 @@ import Achievements from './components/Achievements'
 import Contact from './components/Contact'
 
 export default function App() {
+  const [theme, setTheme] = useState('dark')
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark')
+  }
+
   return (
-    <div style={{ background: '#0a0a0f', minHeight: '100vh', position: 'relative', overflowX: 'hidden' }}>
+    <div style={{ background: 'var(--bg-primary)', minHeight: '100vh', position: 'relative', overflowX: 'hidden' }}>
       <div style={{
         position: 'fixed', inset: 0,
-        backgroundImage: 'radial-gradient(circle, #1a1a2e 1px, transparent 1px)',
+        backgroundImage: 'radial-gradient(circle, var(--border-color) 1px, transparent 1px)',
         backgroundSize: '32px 32px',
         opacity: 0.5, zIndex: 0, pointerEvents: 'none'
       }} />
-      <Navbar />
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
       <Hero />
       <Experience />
       <Projects />
       <Skills />
       <Achievements />
       <Contact />
-      <footer style={{ textAlign: 'center', padding: '24px', borderTop: '1px solid #1a1a2e', position: 'relative', zIndex: 1, color: '#444', fontSize: 13 }}>
-        Designed & Built by <span style={{ color: '#00f5c4' }}>Gino James</span> · 2025
+      <footer style={{ textAlign: 'center', padding: '24px', borderTop: '1px solid var(--border-color)', position: 'relative', zIndex: 1, color: 'var(--text-muted)', fontSize: 13 }}>
+        Designed & Built by <span style={{ color: 'var(--accent-cyan)' }}>Gino James</span> · 2025
       </footer>
     </div>
   )

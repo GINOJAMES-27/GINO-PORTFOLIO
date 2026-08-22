@@ -180,7 +180,7 @@ export default function Portfolio() {
             <span style={styles.cursor}>|</span>
           </div>
           <p style={styles.heroBio}>
-            B.Tech IT student at Amal Jyothi College of Engineering (CGPA: 8.36) with a passion for AI, scalable systems, and solving real-world problems. Currently building enterprise-grade SaaS at Hudson Software Solutions.
+            I’m a Full-Stack Software Developer with a strong focus on backend architecture and scalable solutions. I enjoy designing APIs, working with databases, and integrating systems. Currently, I'm contributing to enterprise SaaS products at Hudson Software Solutions.
           </p>
           <div style={styles.heroBtns}>
             <button onClick={() => scrollTo("Projects")} style={styles.btnPrimary}>View My Work</button>
@@ -321,7 +321,7 @@ export default function Portfolio() {
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        body { background: #0a0a0f; }
+        body { background: var(--bg-primary); }
         @keyframes pulse { 0%,100%{opacity:0.5;transform:scale(1)} 50%{opacity:1;transform:scale(1.08)} }
         @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
@@ -335,7 +335,7 @@ export default function Portfolio() {
 const styles = {
   root: {
     fontFamily: "'DM Sans', sans-serif",
-    background: "#0a0a0f",
+    background: "var(--bg-primary)",
     color: "#e0e0e0",
     minHeight: "100vh",
     position: "relative",
@@ -344,7 +344,7 @@ const styles = {
   bgDots: {
     position: "fixed",
     inset: 0,
-    backgroundImage: "radial-gradient(circle, #1a1a2e 1px, transparent 1px)",
+    backgroundImage: "radial-gradient(circle, var(--border-color) 1px, transparent 1px)",
     backgroundSize: "32px 32px",
     opacity: 0.5,
     zIndex: 0,
@@ -363,7 +363,7 @@ const styles = {
     height: 64,
     background: "rgba(10,10,15,0.92)",
     backdropFilter: "blur(12px)",
-    borderBottom: "1px solid #1a1a2e",
+    borderBottom: "1px solid var(--border-color)",
   },
   navLogo: {
     fontFamily: "'JetBrains Mono', monospace",
@@ -403,8 +403,8 @@ const styles = {
     left: 0,
     right: 0,
     zIndex: 99,
-    background: "#0d0d18",
-    borderBottom: "1px solid #1a1a2e",
+    background: "var(--bg-secondary)",
+    borderBottom: "1px solid var(--border-color)",
     display: "flex",
     flexDirection: "column",
     padding: "8px 0",
@@ -458,7 +458,7 @@ const styles = {
   heroBtns: { display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 28 },
   btnPrimary: {
     background: "#00f5c4",
-    color: "#0a0a0f",
+    color: "var(--bg-primary)",
     border: "none",
     borderRadius: 8,
     padding: "12px 28px",
@@ -506,7 +506,7 @@ const styles = {
     width: 180,
     height: 180,
     borderRadius: "50%",
-    background: "#0d0d18",
+    background: "var(--bg-secondary)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -519,7 +519,7 @@ const styles = {
     position: "absolute",
     top: 10,
     right: -20,
-    background: "#1a1a2e",
+    background: "var(--border-color)",
     border: "1px solid #00f5c4",
     color: "#00f5c4",
     borderRadius: 20,
@@ -533,7 +533,7 @@ const styles = {
     position: "absolute",
     bottom: 10,
     left: -30,
-    background: "#1a1a2e",
+    background: "var(--border-color)",
     border: "1px solid #7c6fff",
     color: "#7c6fff",
     borderRadius: 20,
@@ -583,8 +583,8 @@ const styles = {
     background: "linear-gradient(to bottom, #00f5c430, transparent)",
   },
   timelineCard: {
-    background: "#0d0d18",
-    border: "1px solid #1a1a2e",
+    background: "var(--bg-secondary)",
+    border: "1px solid var(--border-color)",
     borderRadius: 12,
     padding: "20px 24px",
     flex: 1,
@@ -609,8 +609,8 @@ const styles = {
     gap: 24,
   },
   projectCard: {
-    background: "#0d0d18",
-    border: "1px solid #1a1a2e",
+    background: "var(--bg-secondary)",
+    border: "1px solid var(--border-color)",
     borderRadius: 12,
     padding: "28px 24px",
     transition: "transform 0.2s, box-shadow 0.2s",
@@ -638,8 +638,8 @@ const styles = {
     gap: 20,
   },
   skillCard: {
-    background: "#0d0d18",
-    border: "1px solid #1a1a2e",
+    background: "var(--bg-secondary)",
+    border: "1px solid var(--border-color)",
     borderRadius: 12,
     padding: "24px 20px",
   },
@@ -658,8 +658,8 @@ const styles = {
   },
   achieveGrid: { display: "flex", flexDirection: "column", gap: 20 },
   achieveCard: {
-    background: "#0d0d18",
-    border: "1px solid #1a1a2e",
+    background: "var(--bg-secondary)",
+    border: "1px solid var(--border-color)",
     borderRadius: 12,
     padding: "24px 28px",
     display: "flex",
@@ -670,8 +670,8 @@ const styles = {
   achieveTitle: { fontSize: 17, fontWeight: 600, color: "#e0e0e0", marginBottom: 6 },
   achieveDesc: { color: "#777", fontSize: 14 },
   contactBox: {
-    background: "#0d0d18",
-    border: "1px solid #1a1a2e",
+    background: "var(--bg-secondary)",
+    border: "1px solid var(--border-color)",
     borderRadius: 16,
     padding: "48px 40px",
     textAlign: "center",
@@ -682,7 +682,7 @@ const styles = {
   contactBtn: {
     display: "inline-block",
     background: "#00f5c4",
-    color: "#0a0a0f",
+    color: "var(--bg-primary)",
     borderRadius: 8,
     padding: "14px 36px",
     fontWeight: 700,
@@ -696,7 +696,7 @@ const styles = {
   footer: {
     textAlign: "center",
     padding: "24px",
-    borderTop: "1px solid #1a1a2e",
+    borderTop: "1px solid var(--border-color)",
     position: "relative",
     zIndex: 1,
   },

@@ -29,7 +29,7 @@ const CONTACT_LINKS = [
     label: 'GitHub',
     value: 'github.com/GINOJAMES-27',
     href: 'https://github.com/GINOJAMES-27',
-    color: '#ffffff',
+    color: 'var(--text-primary)',
     desc: 'Check out my code',
   },
   {
@@ -37,19 +37,19 @@ const CONTACT_LINKS = [
     label: 'Phone',
     value: '+91 9074598626',
     href: 'tel:+919074598626',
-    color: '#00f5c4',
+    color: 'var(--accent-cyan)',
     desc: 'Available Mon–Sat',
   },
 ]
 
 const INPUT_STYLE = {
   width: '100%',
-  background: '#0a0a12',
-  border: '1px solid #1e1e35',
+  background: 'var(--bg-surface)',
+  border: '1px solid var(--border-color)',
   borderRadius: 12,
   padding: '14px 18px',
   fontSize: 14,
-  color: '#e0e0e0',
+  color: 'var(--text-primary)',
   fontFamily: "'DM Sans', sans-serif",
   outline: 'none',
   transition: 'border 0.25s, box-shadow 0.25s',
@@ -118,11 +118,11 @@ export default function Contact() {
       <h2 style={{
         fontFamily: "'JetBrains Mono', monospace",
         fontSize: 'clamp(26px, 4vw, 40px)',
-        fontWeight: 700, color: '#fff', marginBottom: 8,
+        fontWeight: 700, color: 'var(--text-primary)', marginBottom: 8,
       }}>
-        <span style={{ color: '#00f5c4' }}>//</span> Get In Touch
+        <span style={{ color: 'var(--accent-cyan)' }}>//</span> Get In Touch
       </h2>
-      <p style={{ color: '#555', fontSize: 16, marginBottom: 60 }}>
+      <p style={{ color: 'var(--text-muted)', fontSize: 16, marginBottom: 60 }}>
         Let's build something amazing together
       </p>
 
@@ -138,8 +138,8 @@ export default function Contact() {
 
           {/* Info card */}
           <div style={{
-            background: '#0d0d18',
-            border: '1px solid #1a1a2e',
+            background: 'var(--bg-secondary)',
+            border: '1px solid var(--border-color)',
             borderRadius: 20,
             padding: '36px 32px',
             position: 'relative',
@@ -167,12 +167,12 @@ export default function Contact() {
             }}>
               <span style={{
                 width: 7, height: 7, borderRadius: '50%',
-                background: '#00f5c4', display: 'inline-block',
+                background: 'var(--accent-cyan)', display: 'inline-block',
                 animation: 'blink 1.5s ease-in-out infinite',
                 boxShadow: '0 0 8px #00f5c4',
               }} />
               <span style={{
-                fontSize: 11, color: '#00f5c4',
+                fontSize: 11, color: 'var(--accent-cyan)',
                 fontFamily: "'JetBrains Mono', monospace",
                 fontWeight: 700, letterSpacing: 1.5,
               }}>OPEN TO OPPORTUNITIES</span>
@@ -181,16 +181,16 @@ export default function Contact() {
             <h3 style={{
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: 'clamp(20px, 3vw, 26px)',
-              fontWeight: 700, color: '#fff',
+              fontWeight: 700, color: 'var(--text-primary)',
               lineHeight: 1.35, marginBottom: 16,
             }}>
               Have a project<br />
               in mind?{' '}
-              <span style={{ color: '#00f5c4' }}>Let's talk.</span>
+              <span style={{ color: 'var(--accent-cyan)' }}>Let's talk.</span>
             </h3>
 
             <p style={{
-              fontSize: 14, color: '#666', lineHeight: 1.9, marginBottom: 28,
+              fontSize: 14, color: 'var(--text-muted)', lineHeight: 1.9, marginBottom: 28,
             }}>
               I'm open to full-time roles, freelance projects, and interesting
               conversations. Fill out the form or reach out directly — I usually
@@ -202,10 +202,10 @@ export default function Contact() {
               onClick={copyEmail}
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: 10,
-                background: copied ? '#00f5c418' : '#ffffff08',
-                border: copied ? '1px solid #00f5c455' : '1px solid #ffffff12',
+                background: copied ? '#00f5c418' : 'var(--border-color-light)',
+                border: copied ? '1px solid #00f5c455' : '1px solid var(--border-color)',
                 borderRadius: 10, padding: '11px 18px',
-                fontSize: 12, color: copied ? '#00f5c4' : '#555',
+                fontSize: 12, color: copied ? 'var(--accent-cyan)' : 'var(--text-muted)',
                 fontFamily: "'JetBrains Mono', monospace",
                 cursor: 'pointer', transition: 'all 0.25s',
                 fontWeight: 600,
@@ -235,20 +235,20 @@ export default function Contact() {
                   onMouseLeave={() => setHovered(null)}
                   style={{
                     textDecoration: 'none',
-                    background: isHov ? link.color + '0e' : '#0d0d18',
-                    border: isHov ? `1px solid ${link.color}55` : '1px solid #1a1a2e',
+                    background: isHov ? `color-mix(in srgb, ${link.color} 5%, transparent)` : 'var(--bg-secondary)',
+                    border: isHov ? `1px solid color-mix(in srgb, ${link.color} 33%, transparent)` : '1px solid var(--border-color)',
                     borderRadius: 16, padding: '20px 18px',
                     display: 'flex', flexDirection: 'column', gap: 14,
                     position: 'relative', overflow: 'hidden',
                     transition: 'all 0.25s ease',
                     transform: isHov ? 'translateY(-5px)' : 'translateY(0)',
-                    boxShadow: isHov ? `0 16px 44px ${link.color}18` : 'none',
+                    boxShadow: isHov ? `0 16px 44px color-mix(in srgb, ${link.color} 9%, transparent)` : 'none',
                   }}
                 >
                   {/* Corner glow */}
                   <div style={{
                     position: 'absolute', width: 90, height: 90, borderRadius: '50%',
-                    background: link.color + '10', filter: 'blur(22px)',
+                    background: `color-mix(in srgb, ${link.color} 6%, transparent)`, filter: 'blur(22px)',
                     top: -20, right: -20, pointerEvents: 'none',
                     opacity: isHov ? 1 : 0, transition: 'opacity 0.3s',
                   }} />
@@ -256,10 +256,10 @@ export default function Contact() {
                   {/* Icon box */}
                   <div style={{
                     width: 42, height: 42, borderRadius: 11,
-                    background: link.color + '18',
-                    border: `1px solid ${link.color}33`,
+                    background: `color-mix(in srgb, ${link.color} 9%, transparent)`,
+                    border: `1px solid color-mix(in srgb, ${link.color} 20%, transparent)`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    boxShadow: isHov ? `0 0 18px ${link.color}44` : 'none',
+                    boxShadow: isHov ? `0 0 18px color-mix(in srgb, ${link.color} 27%, transparent)` : 'none',
                     transition: 'box-shadow 0.3s',
                   }}>
                     <Icon size={18} color={link.color} />
@@ -274,7 +274,7 @@ export default function Contact() {
                       margin: '0 0 4px', fontWeight: 700,
                     }}>{link.label}</p>
                     <p style={{
-                      fontSize: 11, color: isHov ? '#fff' : '#777',
+                      fontSize: 11, color: isHov ? 'var(--text-primary)' : '#777',
                       fontWeight: 500, margin: '0 0 3px',
                       transition: 'color 0.2s', wordBreak: 'break-all',
                       fontFamily: "'DM Sans', sans-serif",
@@ -288,7 +288,7 @@ export default function Contact() {
                   {/* Arrow */}
                   <span style={{
                     position: 'absolute', top: 16, right: 16, fontSize: 13,
-                    color: isHov ? link.color : '#2a2a3a',
+                    color: isHov ? link.color : 'var(--text-muted)',
                     transition: 'color 0.2s, transform 0.2s',
                     transform: isHov ? 'translate(2px,-2px)' : 'translate(0,0)',
                   }}>↗</span>
@@ -300,8 +300,8 @@ export default function Contact() {
 
         {/* ── RIGHT: FORM ── */}
         <div style={{
-          background: '#0d0d18',
-          border: '1px solid #1a1a2e',
+          background: 'var(--bg-secondary)',
+          border: '1px solid var(--border-color)',
           borderRadius: 20,
           padding: '36px 32px',
           position: 'relative',
@@ -325,11 +325,11 @@ export default function Contact() {
           <div style={{ marginBottom: 28 }}>
             <h3 style={{
               fontFamily: "'JetBrains Mono', monospace",
-              fontSize: 20, fontWeight: 700, color: '#fff', marginBottom: 6,
+              fontSize: 20, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 6,
             }}>
               Send a Message
             </h3>
-            <p style={{ fontSize: 13, color: '#555', lineHeight: 1.6, margin: 0 }}>
+            <p style={{ fontSize: 13, color: 'var(--text-muted)', lineHeight: 1.6, margin: 0 }}>
               Fill in the details below — I'll get back to you shortly.
             </p>
           </div>
@@ -398,8 +398,8 @@ export default function Contact() {
               }}>
                 Recipient
                 <span style={{
-                  fontSize: 9, color: '#2a2a40',
-                  background: '#1a1a2e', border: '1px solid #2a2a40',
+                  fontSize: 9, color: 'var(--border-color)',
+                  background: 'var(--border-color)', border: '1px solid var(--border-color)',
                   borderRadius: 4, padding: '2px 7px', letterSpacing: 0.5,
                 }}>🔒 LOCKED</span>
               </label>
@@ -407,20 +407,20 @@ export default function Contact() {
                 ...INPUT_STYLE,
                 display: 'flex', alignItems: 'center',
                 justifyContent: 'space-between',
-                background: '#070710',
-                border: '1px solid #12121f',
+                background: 'var(--bg-surface)',
+                border: '1px solid var(--border-color)',
                 cursor: 'not-allowed', color: '#333',
                 gap: 10,
               }}>
                 <span style={{
                   fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 13, color: '#3a3a55',
+                  fontSize: 13, color: 'var(--text-muted)',
                 }}>
                   ginojames27@gmail.com
                 </span>
                 <div style={{
                   width: 8, height: 8, borderRadius: '50%',
-                  background: '#00f5c4',
+                  background: 'var(--accent-cyan)',
                   boxShadow: '0 0 6px #00f5c4',
                   flexShrink: 0,
                 }} />
@@ -458,9 +458,9 @@ export default function Contact() {
               type="submit"
               disabled={status === 'sending'}
               style={{
-                background: status === 'error' ? '#ff6b9d'
-                          : '#00f5c4',
-                color: '#0a0a0f',
+                background: status === 'error' ? 'var(--accent-pink)'
+                          : 'var(--accent-cyan)',
+                color: 'var(--bg-primary)',
                 border: 'none', borderRadius: 12,
                 padding: '15px 28px',
                 fontWeight: 700, fontSize: 15,
@@ -499,7 +499,7 @@ export default function Contact() {
               }}>
                 <span style={{ fontSize: 18 }}>🎉</span>
                 <p style={{
-                  fontSize: 13, color: '#00f5c4', margin: 0,
+                  fontSize: 13, color: 'var(--accent-cyan)', margin: 0,
                   fontFamily: "'JetBrains Mono', monospace",
                 }}>
                   Thanks! I'll reply within 24 hours.
@@ -514,7 +514,7 @@ export default function Contact() {
               }}>
                 <span style={{ fontSize: 18 }}>⚠️</span>
                 <p style={{
-                  fontSize: 13, color: '#ff6b9d', margin: 0,
+                  fontSize: 13, color: 'var(--accent-pink)', margin: 0,
                   fontFamily: "'JetBrains Mono', monospace",
                 }}>
                   Something went wrong. Email me directly.
@@ -528,8 +528,8 @@ export default function Contact() {
       {/* ── Terminal bar ── */}
       <div style={{
         marginTop: 48,
-        background: '#0d0d18',
-        border: '1px solid #1a1a2e',
+        background: 'var(--bg-secondary)',
+        border: '1px solid var(--border-color)',
         borderRadius: 14, padding: '18px 24px',
         display: 'flex', alignItems: 'center', gap: 14,
         overflow: 'hidden', position: 'relative',
@@ -546,25 +546,25 @@ export default function Contact() {
           {['#ff5f57', '#febc2e', '#28c840'].map((c) => (
             <div key={c} style={{
               width: 11, height: 11, borderRadius: '50%', background: c,
-              boxShadow: `0 0 6px ${c}88`,
+              boxShadow: `0 0 6px color-mix(in srgb, ${c} 53%, transparent)`,
             }} />
           ))}
         </div>
 
         {/* Divider */}
-        <div style={{ width: 1, height: 20, background: '#1a1a2e', flexShrink: 0 }} />
+        <div style={{ width: 1, height: 20, background: 'var(--border-color)', flexShrink: 0 }} />
 
         <p style={{
           fontFamily: "'JetBrains Mono', monospace",
-          fontSize: 13, color: '#555', margin: 0,
+          fontSize: 13, color: 'var(--text-muted)', margin: 0,
           overflow: 'hidden', whiteSpace: 'nowrap',
           textOverflow: 'ellipsis',
         }}>
-          <span style={{ color: '#00f5c4' }}>gino@portfolio</span>
-          <span style={{ color: '#7c6fff' }}> ~ </span>
-          <span style={{ color: '#555' }}>$ </span>
-          <span style={{ color: '#aaa' }}>echo </span>
-          <span style={{ color: '#ff6b9d' }}>"Let's build something great together 🚀"</span>
+          <span style={{ color: 'var(--accent-cyan)' }}>gino@portfolio</span>
+          <span style={{ color: 'var(--accent-purple)' }}> ~ </span>
+          <span style={{ color: 'var(--text-muted)' }}>$ </span>
+          <span style={{ color: 'var(--text-secondary)' }}>echo </span>
+          <span style={{ color: 'var(--accent-pink)' }}>"Let's build something great together 🚀"</span>
         </p>
       </div>
     </section>

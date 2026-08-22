@@ -19,13 +19,13 @@ export default function Projects() {
           fontFamily: "'JetBrains Mono', monospace",
           fontSize: 'clamp(26px, 4vw, 40px)',
           fontWeight: 700,
-          color: '#fff',
+          color: 'var(--text-primary)',
           marginBottom: 8,
         }}
       >
-        <span style={{ color: '#00f5c4' }}>//</span> Projects
+        <span style={{ color: 'var(--accent-cyan)' }}>//</span> Projects
       </h2>
-      <p style={{ color: '#555', fontSize: 16, marginBottom: 48 }}>
+      <p style={{ color: 'var(--text-muted)', fontSize: 16, marginBottom: 48 }}>
         Things I've built — click any card to view on GitHub
       </p>
 
@@ -48,8 +48,8 @@ export default function Projects() {
             >
               <div
                 style={{
-                  background: '#0d0d18',
-                  border: '1px solid #1a1a2e',
+                  background: 'var(--bg-secondary)',
+                  border: '1px solid var(--border-color)',
                   borderRadius: 16,
                   padding: '32px 28px',
                   height: '100%',
@@ -63,12 +63,12 @@ export default function Projects() {
                 }}
                 onMouseEnter={e => {
                   e.currentTarget.style.transform = 'translateY(-8px)'
-                  e.currentTarget.style.border = `1px solid ${proj.color}66`
-                  e.currentTarget.style.boxShadow = `0 20px 60px ${proj.color}22`
+                  e.currentTarget.style.border = `1px solid color-mix(in srgb, ${proj.color} 40%, transparent)`
+                  e.currentTarget.style.boxShadow = `0 20px 60px color-mix(in srgb, ${proj.color} 13%, transparent)`
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.transform = 'translateY(0)'
-                  e.currentTarget.style.border = '1px solid #1a1a2e'
+                  e.currentTarget.style.border = '1px solid var(--border-color)'
                   e.currentTarget.style.boxShadow = 'none'
                 }}
               >
@@ -78,7 +78,7 @@ export default function Projects() {
                     position: 'absolute',
                     top: 0, left: 0, right: 0,
                     height: 3,
-                    background: `linear-gradient(90deg, ${proj.color}, ${proj.color}44)`,
+                    background: `linear-gradient(90deg, ${proj.color}, color-mix(in srgb, ${proj.color} 27%, transparent))`,
                     borderRadius: '16px 16px 0 0',
                   }}
                 />
@@ -89,7 +89,7 @@ export default function Projects() {
                     position: 'absolute',
                     width: 160, height: 160,
                     borderRadius: '50%',
-                    background: proj.color + '0c',
+                    background: `color-mix(in srgb, ${proj.color} 5%, transparent)`,
                     filter: 'blur(40px)',
                     top: -40, right: -40,
                     pointerEvents: 'none',
@@ -109,8 +109,8 @@ export default function Projects() {
                     style={{
                       width: 56, height: 56,
                       borderRadius: 14,
-                      background: proj.iconColor + '22',
-                      border: `1px solid ${proj.iconColor}44`,
+                      background: `color-mix(in srgb, ${proj.iconColor} 13%, transparent)`,
+                      border: `1px solid color-mix(in srgb, ${proj.iconColor} 27%, transparent)`,
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -129,16 +129,16 @@ export default function Projects() {
                       display: 'flex',
                       alignItems: 'center',
                       gap: 6,
-                      background: '#ffffff08',
-                      border: '1px solid #ffffff15',
+                      background: 'var(--border-color-light)',
+                      border: '1px solid var(--border-color)',
                       borderRadius: 20,
                       padding: '6px 12px',
                       fontSize: 12,
-                      color: '#666',
+                      color: 'var(--text-muted)',
                       fontFamily: "'JetBrains Mono', monospace",
                     }}
                   >
-                    <SiGithub size={14} color="#888" />
+                    <SiGithub size={14} color="var(--text-muted)" />
                     <span>View</span>
                     <span style={{ fontSize: 14 }}>↗</span>
                   </div>
@@ -150,7 +150,7 @@ export default function Projects() {
                     fontFamily: "'JetBrains Mono', monospace",
                     fontSize: 15,
                     fontWeight: 700,
-                    color: '#f0f0f0',
+                    color: 'var(--text-primary)',
                     lineHeight: 1.5,
                     margin: 0,
                   }}
@@ -161,7 +161,7 @@ export default function Projects() {
                 {/* Description */}
                 <p
                   style={{
-                    color: '#777',
+                    color: 'var(--text-secondary)',
                     fontSize: 14,
                     lineHeight: 1.8,
                     margin: 0,
@@ -175,7 +175,7 @@ export default function Projects() {
                 <div
                   style={{
                     height: 1,
-                    background: '#1a1a2e',
+                    background: 'var(--border-color)',
                     margin: '4px 0',
                   }}
                 />
@@ -191,9 +191,9 @@ export default function Projects() {
                         borderRadius: 6,
                         padding: '4px 10px',
                         fontWeight: 600,
-                        background: proj.color + '15',
+                        background: `color-mix(in srgb, ${proj.color} 8%, transparent)`,
                         color: proj.color,
-                        border: `1px solid ${proj.color}33`,
+                        border: `1px solid color-mix(in srgb, ${proj.color} 20%, transparent)`,
                         letterSpacing: 0.5,
                       }}
                     >

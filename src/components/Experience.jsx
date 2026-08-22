@@ -1,10 +1,6 @@
 import { EXPERIENCES } from '../data/portfolioData'
-import * as SiIcons from 'react-icons/si'
-
-const COMPANY_ICONS = {
-  'Hudson Software Solutions Pvt. Ltd.': { icon: 'SiPython', color: '#3776ab' },
-  'Leopard Tech Labs': { icon: 'SiNodedotjs', color: '#5fa04e' },
-}
+import hudsonLogo from '../assets/hudson-logo.jpg'
+import leopardLogo from '../assets/leopard-logo.jpg'
 
 export default function Experience() {
   return (
@@ -23,13 +19,13 @@ export default function Experience() {
           fontFamily: "'JetBrains Mono', monospace",
           fontSize: 'clamp(26px, 4vw, 40px)',
           fontWeight: 700,
-          color: '#fff',
+          color: 'var(--text-primary)',
           marginBottom: 8,
         }}
       >
-        <span style={{ color: '#00f5c4' }}>//</span> Experience
+        <span style={{ color: 'var(--accent-cyan)' }}>//</span> Experience
       </h2>
-      <p style={{ color: '#555', fontSize: 16, marginBottom: 56 }}>
+      <p style={{ color: 'var(--text-muted)', fontSize: 16, marginBottom: 56 }}>
         My professional journey so far
       </p>
 
@@ -47,8 +43,14 @@ export default function Experience() {
         }} />
 
         {EXPERIENCES.map((exp, i) => {
-          const companyInfo = COMPANY_ICONS[exp.company]
-          const Icon = companyInfo ? SiIcons[companyInfo.icon] : null
+          let logoUrl = ''
+          if (exp.company.includes('Hudson')) {
+            logoUrl = hudsonLogo
+          } else if (exp.company.includes('Leopard')) {
+            logoUrl = leopardLogo
+          } else {
+            logoUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(exp.company)}&background=0d0d18&color=${exp.color.replace('#', '')}&bold=true&size=128`
+          }
 
           return (
             <div
@@ -65,23 +67,19 @@ export default function Experience() {
                 <div style={{
                   width: 56, height: 56,
                   borderRadius: '50%',
-                  background: '#0d0d18',
+                  background: 'var(--bg-secondary)',
                   border: `2px solid ${exp.color}`,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  boxShadow: `0 0 20px ${exp.color}44`,
+                  boxShadow: `0 0 20px color-mix(in srgb, ${exp.color} 27%, transparent)`,
                   zIndex: 1,
                   position: 'relative',
+                  overflow: 'hidden'
                 }}>
-                  {Icon
-                    ? <Icon size={24} color={exp.color} />
-                    : <div style={{
-                        width: 12, height: 12,
-                        borderRadius: '50%',
-                        background: exp.color,
-                      }} />
-                  }
+                  <img src={logoUrl} alt={`${exp.company} Logo`} style={{
+                    width: '100%', height: '100%', objectFit: 'cover'
+                  }} />
                 </div>
               </div>
 
@@ -89,8 +87,8 @@ export default function Experience() {
               <div
                 style={{
                   flex: 1,
-                  background: '#0d0d18',
-                  border: '1px solid #1a1a2e',
+                  background: 'var(--bg-secondary)',
+                  border: '1px solid var(--border-color)',
                   borderRadius: 16,
                   padding: '28px 28px',
                   position: 'relative',
@@ -98,11 +96,11 @@ export default function Experience() {
                   transition: 'border 0.3s, box-shadow 0.3s',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.border = `1px solid ${exp.color}55`
-                  e.currentTarget.style.boxShadow = `0 8px 40px ${exp.color}18`
+                  e.currentTarget.style.border = `1px solid color-mix(in srgb, ${exp.color} 33%, transparent)`
+                  e.currentTarget.style.boxShadow = `0 8px 40px color-mix(in srgb, ${exp.color} 9%, transparent)`
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.border = '1px solid #1a1a2e'
+                  e.currentTarget.style.border = '1px solid var(--border-color)'
                   e.currentTarget.style.boxShadow = 'none'
                 }}
               >
@@ -111,7 +109,7 @@ export default function Experience() {
                   position: 'absolute',
                   left: 0, top: 0, bottom: 0,
                   width: 3,
-                  background: `linear-gradient(to bottom, ${exp.color}, ${exp.color}22)`,
+                  background: `linear-gradient(to bottom, ${exp.color}, color-mix(in srgb, ${exp.color} 13%, transparent))`,
                   borderRadius: '16px 0 0 16px',
                 }} />
 
@@ -120,7 +118,7 @@ export default function Experience() {
                   position: 'absolute',
                   width: 200, height: 200,
                   borderRadius: '50%',
-                  background: exp.color + '08',
+                  background: `color-mix(in srgb, ${exp.color} 3%, transparent)`,
                   filter: 'blur(50px)',
                   top: -60, right: -60,
                   pointerEvents: 'none',
@@ -154,8 +152,8 @@ export default function Experience() {
                     fontSize: 11,
                     fontFamily: "'JetBrains Mono', monospace",
                     color: exp.color,
-                    background: exp.color + '15',
-                    border: `1px solid ${exp.color}44`,
+                    background: `color-mix(in srgb, ${exp.color} 8%, transparent)`,
+                    border: `1px solid color-mix(in srgb, ${exp.color} 27%, transparent)`,
                     borderRadius: 20,
                     padding: '5px 14px',
                     whiteSpace: 'nowrap',
@@ -181,7 +179,7 @@ export default function Experience() {
                 }}>
                   <span style={{
                     fontSize: 13,
-                    color: '#aaa',
+                    color: 'var(--text-secondary)',
                     fontWeight: 500,
                   }}>
                     {exp.company}
@@ -189,7 +187,7 @@ export default function Experience() {
                   <span style={{ color: '#333', fontSize: 13 }}>·</span>
                   <span style={{
                     fontSize: 12,
-                    color: '#555',
+                    color: 'var(--text-muted)',
                     display: 'flex',
                     alignItems: 'center',
                     gap: 4,
@@ -201,7 +199,7 @@ export default function Experience() {
                 {/* Divider */}
                 <div style={{
                   height: 1,
-                  background: `linear-gradient(to right, ${exp.color}33, transparent)`,
+                  background: `linear-gradient(to right, color-mix(in srgb, ${exp.color} 20%, transparent), transparent)`,
                   marginBottom: 20,
                 }} />
 

@@ -12,7 +12,7 @@ export default function Achievements() {
       longDesc: 'Competed in the global NASA Space Apps Challenge 2025 and won the Senior Category at Amal Jyothi College of Engineering — building an innovative space-tech solution under a 48-hour hackathon format.',
       tag: 'Hackathon',
       badge: 'Winner',
-      color: '#00f5c4',
+      color: 'var(--accent-cyan)',
       year: '2025',
       proofUrl: '/certificates/NasaSpaceApp.pdf',
     },
@@ -23,7 +23,7 @@ export default function Achievements() {
       longDesc: 'Out of hundreds of applicants, selected for Phase-II funding in the Innovation Ideas Unleashed (I2U) 2025 Project Contest — recognizing the project\'s potential for real-world impact and scalability.',
       tag: 'Funding',
       badge: 'Phase II Funded',
-      color: '#7c6fff',
+      color: 'var(--accent-purple)',
       year: '2025',
       proofUrl: '/certificates/I2U.pdf',
     },
@@ -47,11 +47,11 @@ export default function Achievements() {
         <h2 style={{
           fontFamily: "'JetBrains Mono', monospace",
           fontSize: 'clamp(26px, 4vw, 40px)',
-          fontWeight: 700, color: '#fff', marginBottom: 8,
+          fontWeight: 700, color: 'var(--text-primary)', marginBottom: 8,
         }}>
-          <span style={{ color: '#00f5c4' }}>//</span> Achievements
+          <span style={{ color: 'var(--accent-cyan)' }}>//</span> Achievements
         </h2>
-        <p style={{ color: '#555', fontSize: 16, marginBottom: 56 }}>
+        <p style={{ color: 'var(--text-muted)', fontSize: 16, marginBottom: 56 }}>
           Recognition & milestones
         </p>
 
@@ -64,22 +64,22 @@ export default function Achievements() {
               onMouseLeave={() => setHovered(null)}
               style={{
                 position: 'relative',
-                background: '#0d0d18',
-                border: hovered === i ? `1px solid ${a.color}55` : '1px solid #1a1a2e',
+                background: 'var(--bg-secondary)',
+                border: hovered === i ? `1px solid color-mix(in srgb, ${a.color} 33%, transparent)` : '1px solid var(--border-color)',
                 borderRadius: 20,
                 padding: '32px 36px',
                 cursor: 'pointer',
                 overflow: 'hidden',
                 transition: 'all 0.3s ease',
                 transform: hovered === i ? 'translateY(-4px)' : 'translateY(0)',
-                boxShadow: hovered === i ? `0 16px 60px ${a.color}18` : 'none',
+                boxShadow: hovered === i ? `0 16px 60px color-mix(in srgb, ${a.color} 9%, transparent)` : 'none',
               }}
             >
               {/* Left accent bar */}
               <div style={{
                 position: 'absolute',
                 left: 0, top: 0, bottom: 0, width: 4,
-                background: `linear-gradient(to bottom, ${a.color}, ${a.color}22)`,
+                background: `linear-gradient(to bottom, ${a.color}, color-mix(in srgb, ${a.color} 13%, transparent))`,
                 borderRadius: '20px 0 0 20px',
               }} />
 
@@ -87,7 +87,7 @@ export default function Achievements() {
               <div style={{
                 position: 'absolute',
                 width: 280, height: 280, borderRadius: '50%',
-                background: a.color + '08',
+                background: `color-mix(in srgb, ${a.color} 3%, transparent)`,
                 filter: 'blur(60px)',
                 top: -80, right: -80,
                 pointerEvents: 'none',
@@ -108,11 +108,11 @@ export default function Achievements() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
                   <div style={{
                     width: 64, height: 64, borderRadius: '50%',
-                    background: a.color + '15',
-                    border: `2px solid ${a.color}44`,
+                    background: `color-mix(in srgb, ${a.color} 8%, transparent)`,
+                    border: `2px solid color-mix(in srgb, ${a.color} 27%, transparent)`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     fontSize: 28, flexShrink: 0,
-                    boxShadow: hovered === i ? `0 0 24px ${a.color}44` : 'none',
+                    boxShadow: hovered === i ? `0 0 24px color-mix(in srgb, ${a.color} 27%, transparent)` : 'none',
                     transition: 'box-shadow 0.3s',
                   }}>
                     {a.icon}
@@ -124,8 +124,8 @@ export default function Achievements() {
                       fontSize: 10,
                       fontFamily: "'JetBrains Mono', monospace",
                       color: a.color,
-                      background: a.color + '18',
-                      border: `1px solid ${a.color}33`,
+                      background: `color-mix(in srgb, ${a.color} 9%, transparent)`,
+                      border: `1px solid color-mix(in srgb, ${a.color} 20%, transparent)`,
                       borderRadius: 20,
                       padding: '3px 10px',
                       letterSpacing: 1.5,
@@ -138,7 +138,7 @@ export default function Achievements() {
                     <h3 style={{
                       fontFamily: "'JetBrains Mono', monospace",
                       fontSize: 'clamp(14px, 2.5vw, 18px)',
-                      fontWeight: 700, color: '#f0f0f0',
+                      fontWeight: 700, color: 'var(--text-primary)',
                       margin: 0, lineHeight: 1.4,
                     }}>
                       {a.title}
@@ -153,8 +153,8 @@ export default function Achievements() {
                 }}>
                   <div style={{
                     display: 'flex', alignItems: 'center', gap: 6,
-                    background: a.color + '20',
-                    border: `1px solid ${a.color}55`,
+                    background: `color-mix(in srgb, ${a.color} 13%, transparent)`,
+                    border: `1px solid color-mix(in srgb, ${a.color} 33%, transparent)`,
                     borderRadius: 20, padding: '6px 16px',
                   }}>
                     <span style={{
@@ -183,7 +183,7 @@ export default function Achievements() {
               {/* Gradient divider */}
               <div style={{
                 height: 1,
-                background: `linear-gradient(to right, ${a.color}44, transparent)`,
+                background: `linear-gradient(to right, color-mix(in srgb, ${a.color} 27%, transparent), transparent)`,
                 marginBottom: 20,
               }} />
 
@@ -195,7 +195,7 @@ export default function Achievements() {
                 flexWrap: 'wrap', gap: 16,
               }}>
                 <p style={{
-                  fontSize: 14, color: '#777',
+                  fontSize: 14, color: 'var(--text-secondary)',
                   lineHeight: 1.8, margin: 0, maxWidth: 600,
                 }}>
                   {a.longDesc}
@@ -203,8 +203,8 @@ export default function Achievements() {
 
                 <div style={{
                   display: 'flex', alignItems: 'center', gap: 8,
-                  background: a.color + '12',
-                  border: `1px solid ${a.color}33`,
+                  background: `color-mix(in srgb, ${a.color} 7%, transparent)`,
+                  border: `1px solid color-mix(in srgb, ${a.color} 20%, transparent)`,
                   borderRadius: 10, padding: '10px 18px',
                   fontSize: 13, color: a.color,
                   fontWeight: 600,
@@ -239,8 +239,8 @@ export default function Achievements() {
           <div
             onClick={e => e.stopPropagation()}
             style={{
-              background: '#0d0d18',
-              border: `1px solid ${selectedAchievement.color}44`,
+              background: 'var(--bg-secondary)',
+              border: `1px solid color-mix(in srgb, ${selectedAchievement.color} 27%, transparent)`,
               borderRadius: 20,
               width: '100%',
               maxWidth: 1000,
@@ -249,7 +249,7 @@ export default function Achievements() {
               display: 'flex',
               flexDirection: 'column',
               overflow: 'hidden',
-              boxShadow: `0 0 80px ${selectedAchievement.color}22`,
+              boxShadow: `0 0 80px color-mix(in srgb, ${selectedAchievement.color} 13%, transparent)`,
             }}
           >
             {/* Modal header */}
@@ -258,8 +258,8 @@ export default function Achievements() {
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              borderBottom: `1px solid ${selectedAchievement.color}22`,
-              background: selectedAchievement.color + '08',
+              borderBottom: `1px solid color-mix(in srgb, ${selectedAchievement.color} 13%, transparent)`,
+              background: `color-mix(in srgb, ${selectedAchievement.color} 3%, transparent)`,
               flexWrap: 'wrap', gap: 12,
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
@@ -277,7 +277,7 @@ export default function Achievements() {
                     {selectedAchievement.tag}
                   </p>
                   <h3 style={{
-                    color: '#f0f0f0', fontSize: 16, margin: 0,
+                    color: 'var(--text-primary)', fontSize: 16, margin: 0,
                     fontFamily: "'JetBrains Mono', monospace", fontWeight: 700,
                   }}>
                     {selectedAchievement.title}
@@ -288,21 +288,21 @@ export default function Achievements() {
               <button
                 onClick={closeProof}
                 style={{
-                  background: '#ffffff0a',
-                  border: '1px solid #ffffff15',
-                  color: '#888', fontSize: 18,
+                  background: 'var(--border-color-light)',
+                  border: '1px solid var(--border-color)',
+                  color: 'var(--text-secondary)', fontSize: 18,
                   cursor: 'pointer',
                   width: 40, height: 40, borderRadius: '50%',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   transition: 'all 0.2s', flexShrink: 0,
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.background = '#ffffff18'
-                  e.currentTarget.style.color = '#fff'
+                  e.currentTarget.style.background = 'var(--border-color-hover)'
+                  e.currentTarget.style.color = 'var(--text-primary)'
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.background = '#ffffff0a'
-                  e.currentTarget.style.color = '#888'
+                  e.currentTarget.style.background = 'var(--border-color-light)'
+                  e.currentTarget.style.color = 'var(--text-secondary)'
                 }}
               >
                 ✕
@@ -344,15 +344,15 @@ export default function Achievements() {
             {/* Modal footer */}
             <div style={{
               padding: '14px 28px',
-              borderTop: `1px solid ${selectedAchievement.color}22`,
+              borderTop: `1px solid color-mix(in srgb, ${selectedAchievement.color} 13%, transparent)`,
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              background: '#0a0a0f',
+              background: 'var(--bg-primary)',
               flexWrap: 'wrap', gap: 12,
             }}>
               <span style={{
-                fontSize: 12, color: '#555',
+                fontSize: 12, color: 'var(--text-muted)',
                 fontFamily: "'JetBrains Mono', monospace",
               }}>
                 {selectedAchievement.desc}
@@ -363,7 +363,7 @@ export default function Achievements() {
                 style={{
                   display: 'flex', alignItems: 'center', gap: 6,
                   background: selectedAchievement.color,
-                  color: '#0a0a0f', borderRadius: 8,
+                  color: 'var(--bg-primary)', borderRadius: 8,
                   padding: '8px 18px', fontSize: 13,
                   fontWeight: 700, textDecoration: 'none',
                   fontFamily: "'DM Sans', sans-serif",
